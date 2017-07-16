@@ -1,0 +1,27 @@
+<project default="compile">
+    <path id="build-classpath">
+        <fileset dir="./lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+    <manifestclasspath property="lib.list" jarfile="Garden.jar">
+        <classpath refid="build-classpath"/>
+    </manifestclasspath>
+    <target name="compile">
+        <mkdir dir="bin" />
+        <javac srcdir="src" destdir="bin">
+            <classpath>
+                <pathelement location="glugen-rt.jar" />
+                <pathelement location="joal.jar" />
+            </classpath>
+        </javac>
+    </target>
+    <target name="build" depends="compile">
+        <jar jarfile="Garden.jar" basedir="bin">
+            <manifest>
+                <attribute name="Main-Class" value="com.zeecant.garden.Core" />
+                <attribute name="Class-Path" value="${lib.list}" />
+            </manifest>
+        </jar>
+    </target>
+</project>
