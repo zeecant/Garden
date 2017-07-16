@@ -10,4 +10,4 @@ Arrow keys to move, Space to water plants/move seeds.
 
 compile: ant compile
 
-distribute: ant dist
+build: ant build

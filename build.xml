@@ -11,8 +11,8 @@
         <mkdir dir="bin" />
         <javac srcdir="src" destdir="bin">
             <classpath>
-                <pathelement location="glugen-rt.jar" />
-                <pathelement location="joal.jar" />
+                <pathelement location="lib/glugen-rt.jar" />
+                <pathelement location="lib/joal.jar" />
             </classpath>
         </javac>
     </target>
